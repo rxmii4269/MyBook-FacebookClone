@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+
+{% block main%}
+
+<div class="container">
+    <div class="row no-flex">
+        <div class="text-center block col">
+
+            <h1 class="groupname" id="{{group['group_id']}}">{{group['group_name']}}</h1>
+            <p>{{group['description']}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mr-auto text-center">
+            <div class="group-block">
+                <h4>Group Members</h4>
+                {% for member in group_members%}
+                <a href="{{url_for('profile',username=member['username'])}}"><span>{{member['username']+' '}}</span></a>
+                <span>{{member['role']}}</span>
+                <br>
+                {%endfor%}
+            </div>
+            
+        </div>
+        <div class="col-md-4 text-center block">
+            <h4>Friends</h4>
+            {%for friend in friends%}
+            <div id="f-{{friend[0]}}">
+                <a href="{{url_for('profile',username=friend['username'])}}">
+                    <h6>{{friend['first_name']+" "+friend['last_name']}}</h6>
+                </a>
+                <button class="btn edit text-white content-editor" value="{{friend['user_id']}}">Add as content-editor</button>
+            </div>
+            {%endfor%}
+            
+        </div>
+    </div>
+</div>
+
+
+<div class=" friends col"></div>
+{%endblock%}

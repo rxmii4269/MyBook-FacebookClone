@@ -1,0 +1,234 @@
+/* HSL */
+/* RGB */
+/* HEX */
+/* GRADIENT */
+body {
+  padding-top: 5rem;
+  font-family: "Jost", sans-serif;
+  background-color: #f0f2f5ff;
+}
+
+.blue {
+  background-color: #3897f0ff;
+}
+
+#h-login {
+  text-align: center;
+}
+
+.center-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  text-align: center;
+}
+
+.center-btn {
+  text-align: center;
+}
+
+.center-reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: #78c0e0ff 4px solid;
+  border-bottom: #78c0e0ff 4px solid;
+  border-radius: 4px;
+}
+
+.profile-block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: #78c0e0ff 4px solid;
+  border-bottom: #78c0e0ff 4px solid;
+  border-radius: 4px;
+}
+
+.no-flex {
+  display: unset !important;
+}
+
+.friend-profile_pic {
+  max-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.group-block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: #78c0e0ff 4px solid;
+  border-bottom: #78c0e0ff 4px solid;
+  border-radius: 4px;
+}
+
+.create_group {
+  margin: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.edit {
+  background-color: #78c0e0ff;
+}
+
+.edit:hover {
+  color: #02010aff !important;
+}
+
+.edit-profile {
+  margin: auto;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.profile {
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-pic {
+  height: 192px;
+  width: 192px;
+}
+
+#sign-up {
+  float: none;
+  background-color: #02010aff;
+}
+
+#login-btn {
+  background-color: #02010aff;
+}
+
+.post-btn {
+  background-color: #02010aff;
+  color: white;
+}
+
+.container {
+  max-width: inherit;
+}
+
+.custom-file {
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.custom-file-input {
+  cursor: pointer;
+}
+
+.input-group {
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+.parent-2 {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.parent-2 table, th, td {
+  border: 1px solid #c4c9e6;
+  text-align: center;
+  padding: 5px;
+}
+
+.group {
+  grid-row-end: 1;
+}
+
+.create-post {
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 25px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-end: 1;
+}
+
+.post {
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 25px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-end: 1;
+}
+
+.friends {
+  grid-column-start: 4;
+  grid-row-end: 1;
+}
+
+.posts {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+
+.comment-btn {
+  background-color: #02010aff;
+  color: white;
+}
+
+.photo_comment-btn {
+  background-color: #02010aff;
+  color: white;
+}
+
+.comments {
+  border: 1px solid #3897f0ff;
+  border-radius: 5px;
+}
+
+.a-comment {
+  border: 5px solid #f0f2f5ff;
+}
+
+/*# sourceMappingURL=app.css.map */

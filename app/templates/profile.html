@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+
+
+{% block main%}
+<div class="container">
+    <div class="row no-flex">
+        <div class="profile text-center profile-block col">
+            <img class="profile-pic edit-photo" src="{{url_for('static',filename='uploads/'+ profile_pic)}}"
+                alt="profile picture" height="100" width="100%">
+            <h1 class="username">{{profile['username']}}</h1>
+
+            {% if current_user.username == profile['username']%}
+            <p class="firstname ">{{profile['first_name'] +" " +profile['last_name']}}</p>
+            <p class="dob ">{{profile['dob']}}</p>
+            <p class="phone ">{{profile['telephone']}}</p>
+            <a class="btn text-white edit" href="{{url_for('edit_profile',user_id=current_user.user_id)}}">Edit
+                Profile</a>
+
+        </div>
+
+        {%else%}
+        <button id="follow" onclick="addFriend()" class="btn btn-success" value="{{profile['user_id']}}">Add
+            Friend</button>
+        {%endif %}
+    </div>
+
+
+    {% if current_user.username == profile['username']%}
+    <div class="row">
+        <div class="col-md-4 mr-auto text-center">
+            <div class="group-block">
+                <h4>My Groups</h4>
+                {% for group in groups%}
+                <!--Get proper route to group #Marc-->
+                <a href="{{url_for('group',group_id=group['group_id'])}}">
+                    <div class="group-block">
+                        <h4>{{group['group_name']}}</h4>
+                        <h6>{{group['description']}}</h6>
+                    </div>
+                </a>
+                {% endfor %}
+                <a class="btn text-white edit" href="{{url_for('create_group')}}">Create New Group</a>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="block">
+                <h4>Friends</h4>
+                {%for friend in friends%}
+                <div id="f-{{friend[0]}}">
+                    <img class=" friend-profile_pic "
+                        src="{{url_for('static',filename='uploads/'+ friend['filename'])}}" alt="profile picture">
+                    <a href="{{url_for('profile',username=friend['username'])}}">
+                        <p>{{friend['first_name']+" "+friend['last_name']}}</p>
+                    </a>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+    </div>
+    {%endif%}
+</div>
+{%endblock%}

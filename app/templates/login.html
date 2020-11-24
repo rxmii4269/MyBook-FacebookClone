@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="center-div">
+  <div class="login-form block">
+    <h2 id="h-login">Login</h2>
+    {% include 'flash_messages.html' %}
+    <form action="{{ url_for('login') }}" method="post">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class='form-control', placeholder="Enter your username") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class='form-control',placeholder='Password') }}
+      </div>
+      <div class="center-btn">
+        <button type="submit" name="submit" id="login-btn" class="btn btn-md center-btn text-white btn-lg">Log in</button>
+      </div>
+    </form>
+
+    <p class="center">Don't have an account? <a href="{{url_for('register')}}">Sign up</a></p>
+  </div>
+</div>
+{% endblock %}

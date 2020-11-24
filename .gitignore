@@ -1,0 +1,13 @@
+venv
+__pycache__
+*.pyc
+.vscode
+app/*.pyc
+app/static/uploads/*.png
+app/static/uploads/*.jpeg
+app/static/uploads/*.jpg
+app/static/uploads/*.JPG
+app/static/uploads/posts/*.jpeg
+app/static/uploads/posts/*.JPG
+app/static/uploads/posts/*.jpg
+app/static/uploads/posts/*.png

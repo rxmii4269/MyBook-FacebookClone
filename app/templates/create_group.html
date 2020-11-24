@@ -1,0 +1,26 @@
+{% extends 'base.html'  %}
+
+{% block main %}
+
+
+<div class="block create_group">
+    <h1 class="text-center">Create Group</h1>
+    <form action="{{url_for('create_group')}}" method="post" enctype="multipart/form-data">
+        {{form.csrf_token}}
+        <div class="form-group">
+            
+            {{form.groupName.label}}
+            {{form.groupName(class='form-control')}}
+        </div>
+        <div class="form-group">
+            {{form.description.label}}
+            {{form.description(class='form-control')}}
+        </div>
+        <div class="center-btn">
+            <a href="{{url_for('profile',username=current_user.username)}}" class="btn btn-outline-danger">Cancel</a>
+            <button type="submit" class="btn btn-outline-success">Save</button>
+        </div>
+    </form>
+</div>
+
+{%endblock%}

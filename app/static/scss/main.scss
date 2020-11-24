@@ -1,0 +1,321 @@
+/* HSL */
+$color1: hsla(209%, 77%, 94%, 1);
+$color2: hsla(216%, 2%, 96%, 1);
+$color3: hsla(247%, 90%, 4%, 1);
+$color4: hsla(212%, 24%, 95%, 1);
+$color5: hsla(198%, 46%, 88%, 1);
+
+/* RGB */
+$color1: rgba(56, 151, 240, 1);
+$color2: rgba(240, 242, 245, 1);
+$color3: rgba(2, 1, 10, 1);
+$color4: rgba(183, 211, 242, 1);
+$color5: rgba(120, 192, 224, 1);
+
+/* HEX */
+$color1: #3897f0ff;
+$color2: #f0f2f5ff;
+$color3: #02010aff;
+$color4: #b7d3f2ff;
+$color5: #78c0e0ff;
+
+/* GRADIENT */
+$gradient-top: linear-gradient(
+  0deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-right: linear-gradient(
+  90deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-bottom: linear-gradient(
+  180deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-left: linear-gradient(
+  270deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-top-right: linear-gradient(
+  45deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-bottom-right: linear-gradient(
+  135deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-top-left: linear-gradient(
+  225deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-bottom-left: linear-gradient(
+  315deg,
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+$gradient-radial: radial-gradient(
+  #3897f0ff,
+  #f0f2f5ff,
+  #02010aff,
+  #b7d3f2ff,
+  #78c0e0ff
+);
+
+$font-stack: "Jost", sans-serif;
+
+body {
+  padding-top: 5rem;
+  font-family: $font-stack;
+  background-color: $color2;
+}
+
+.blue {
+  background-color: $color1;
+}
+
+#h-login {
+  text-align: center;
+}
+
+.center-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  text-align: center;
+}
+
+.center-btn {
+  text-align: center;
+}
+
+.center-reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: $color5 4px solid;
+  border-bottom: $color5 4px solid;
+  border-radius: 4px;
+}
+.profile-block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: $color5 4px solid;
+  border-bottom: $color5 4px solid;
+  border-radius: 4px;
+}
+
+.no-flex {
+  display: unset !important;
+}
+
+.friend-profile_pic {
+  max-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.group-block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+  flex: 0 1 24%;
+  border-top: $color5 4px solid;
+  border-bottom: $color5 4px solid;
+  border-radius: 4px;
+}
+
+.create_group {
+  margin: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.edit {
+  background-color: $color5;
+}
+.edit:hover {
+  color: $color3 !important;
+}
+
+.edit-profile {
+  margin: auto;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.profile {
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-pic {
+  height: 192px;
+  width: 192px;
+}
+
+#sign-up {
+  float: none;
+  background-color: $color3;
+}
+
+#login-btn {
+  background-color: $color3;
+}
+
+.post-btn {
+  background-color: $color3;
+  color: white;
+}
+
+.container {
+  max-width: inherit;
+}
+
+
+
+.custom-file {
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.custom-file-input{
+  cursor: pointer;
+}
+
+.input-group{
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+// css for homepage
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+.parent-2 {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.parent-2 table,th,td {
+  border:1px solid rgb(196, 201, 230);
+  text-align:center;
+  padding:5px;
+}
+
+.group {
+  grid-row-end: 1;
+}
+.create-post {
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 25px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-end: 1;
+}
+.post {
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 25px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-end: 1;
+}
+
+.friends{
+  grid-column-start:4;
+  grid-row-end: 1;
+}
+
+.posts{
+  grid-column-start: 2;
+  grid-column-end:4;
+  grid-row-start: 1;
+}
+
+.comment-btn{
+  background-color: $color3;
+  color: white;
+}
+.photo_comment-btn{
+  background-color: $color3;
+  color: white;
+}
+
+.comments{
+  border: 1px solid $color1;
+  border-radius: 5px;
+}
+
+.a-comment{
+  border: 5px solid $color2;
+}

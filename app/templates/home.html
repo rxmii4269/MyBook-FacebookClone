@@ -1,0 +1,102 @@
+{% extends 'base.html'%}
+
+
+{%block main%}
+<div class="parent">
+
+  <div class="group block">
+    <h2>Groups</h2>
+    {%for group in groups%}
+    <div id="{{group['group_id']}}">
+      <a href="{{url_for('group',group_id=group['group_id'])}}">
+        <p>{{group['group_name']}}</p>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+
+  <div class="create-post block">
+    <div class="post-form">
+      <form action="{{url_for('home')}}" method="post">
+        {{postform.csrf_token}}
+        <div class="form-group">
+          {{postform.description(placeholder='What\'s on your mind?',class='form-control')}}
+        </div>
+        <button class="btn btn-block post-btn">Post</button>
+      </form>
+
+    </div>
+    <button class="btn float-left post-btn my-3 photo-btn">Post-Photo</button>
+    <div class="photo-form" hidden aria-hidden="true">
+      <form action="{{url_for('home')}}" method="post" enctype="multipart/form-data">
+        {{photoform.csrf_token}}
+        <div class="form-group">
+          {{photoform.photo(class='btn')}}
+          {{photoform.caption(class='form-control',placeholder='Describe your image')}}
+        </div>
+        <button class="btn btn-block post-btn">Post</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="text-center block friends">
+
+    <h2> Friends List </h2>
+    {%for friend in friends%}
+    <div id="f-{{friend['user_id']}}">
+      <a href="{{url_for('profile',username=friend['username'])}}">
+        <p>{{friend['first_name']+" "+friend['last_name']}}</p>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+
+  <div class="posts">
+    {% for post in posts%}
+    <div class="block post rounded my-3">
+      <p>{{post[2]}}</p>
+      <h6>Comments</h6>
+      {% for comment in comments%}
+      {% if comment['post_id']== post[1]%}
+      <div class="comments">
+
+        <p class="a-comment">{{comment['comment']}}</p>
+      </div>
+      {% endif%}
+      {%endfor%}
+      <div class="input-group center">
+        <input class="comment" type="text" name="" id="post-{{post[1]}}">
+        <div class="input-group-append">
+          <button class="btn comment-btn" id="reply-{{post[1]}}" value="{{post[1]}}">Comment</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    {% endfor%}
+    {% for photo in photos %}
+    <div class="block post rounded my-3">
+      <img src="{{url_for('static',filename='uploads/posts/'+ photo[3])}}" alt="">
+      <p>{{photo[2]}}</p>
+      <h6>Comments</h6>
+      {% for photo_comment in photo_comments%}
+      <div class="comments">
+
+        <p class="a-comment">{{photo_comment['comment']}}</p>
+      </div>
+      {%endfor%}
+      <div class="input-group center">
+        <input class="" type="text" name="" id="post-{{photo[1]}}">
+        <div class="input-group-append">
+          <button class="btn photo_comment-btn" id="reply-{{photo[1]}}" value="{{photo[1]}}">Comment</button>
+        </div>
+
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+
+</div>
+{%endblock%}

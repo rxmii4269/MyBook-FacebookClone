@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+
+{% block main%}
+{% if current_user.username=="romyroms18"%}
+<div class="parent-2">
+    <div class="user-list block"> 
+        <h2> User Summary</h2>
+        <table>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name</th>
+            <th> Username </th>
+        </tr>
+            {% for alluser in allusers%}
+        <tr>
+            <td>{{alluser['first_name']}}</td>
+            <td>{{alluser['last_name']}}</td>
+            <td>{{alluser['username']}}</td>
+        </tr>
+            {%endfor%}
+        </table>
+    </div>
+<div class="post-list block">
+    <h2> Post Summary </h2>
+    <table>
+    <tr>
+        <th> Post ID</th>
+        <th> Post Description</th>
+    </tr>
+        {%for allpost in allposts%}
+    <tr>
+        <td>{{allpost['post_id']}} </td>
+        <td> {{allpost['description']}}</td>
+    </tr>
+        {%endfor%}
+        </table>
+
+</div>
+<div class="group-list block">
+    <h2> Group Report</h2>
+    
+    <table>
+    <tr>
+        <th>Group ID</th>
+        <th>Group Name</th>
+    </tr>
+        {%for allgroup in allgroups%}
+    <tr>
+
+        <td>{{allgroup['group_id']}}</td>
+        <td>{{allgroup['group_name']}}</td>
+
+    </tr>
+        {%endfor%}
+
+    </table>
+    </div>
+
+
+</div>
+{%endif%}
+{%endblock%}

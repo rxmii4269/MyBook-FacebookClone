@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="center-reg">
+    <h2 id="h-login">Create a New Account</h2>
+    <p id="h-login">It's quick and easy</p>
+
+    <div class="login-form block">
+        <form action="{{url_for('register')}}" method="post" enctype="multipart/form-data">
+            {% include 'flash_messages.html' %}
+            {{ form.csrf_token }}
+            <div class="row">
+                <div class="form-group col">
+                    {{form.firstname.label}}
+                    {{form.firstname(class='form-control',placeholder='First Name')}}
+                </div>
+                <div class="form-group col">
+                    {{form.lastname.label}}
+                    {{form.lastname(class='form-control',placeholder='Last Name')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    {{form.username.label}}
+                    {{form.username(class='form-control',placeholder='Username')}}
+                </div>
+                <div class="form-group col">
+                    {{form.password.label}}
+                    {{form.password(class='form-control',placeholder='Password')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    {{form.email.label}}
+                    {{form.email(class='form-control',placeholder='johndoe@example.com')}}
+                </div>
+                <div class="form-group col">
+                    {{form.telephone.label}}
+                    {{form.telephone(class='form-control',placeholder='1(888)252-2245')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col" data-provider="datepicker">
+                    {{form.dob.label}}
+                    {{form.dob(class='form-control' ,id='datepicker')}}
+                </div>
+                <div class="form-group col">
+                    {{form.gender.label}}
+                    {{form.gender(class='form-control')}}
+                </div>
+            </div>
+            <div class="form-group border">
+                {{form.photo(class='btn')}}
+            </div>
+            <div class="center-btn">
+                <button id="sign-up" type="submit" name="submit" class="btn text-white btn-lg">Sign up</button>
+            </div>
+        </form>
+
+        <p class="center">Already have an account? <a href="{{url_for('login')}}">Log in</a></p>
+    </div>
+</div>
+{%endblock%}
