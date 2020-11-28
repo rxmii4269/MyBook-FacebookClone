@@ -126,3 +126,11 @@ BEGIN
 INSERT INTO users(firstname,lastname,password,email) values(IN firstname,lastname,password,email);
 END $$
 DELIMITER;
+
+
+DELIMITER $$
+CREATE PROCEDURE GetCredentials(IN Username varchar(80))
+BEGIN
+SELECT user_id,username,password FROM login WHERE username = Username;
+END $$
+DELIMITER;
